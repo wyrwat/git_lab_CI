@@ -1,17 +1,15 @@
 import unittest
-from selenium.webdriver.chrome.service import Service
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service  # Import Service
 
 class ShopSampleTests(unittest.TestCase):
 
     def setUp(self):
-        print('setup')
-
-        service = Service(r"libs/chromedriver")
-        options = Options()
-        options.add_argument("--start-maximized")
-        self.driver = webdriver.Chrome(service=service, options=options)
+        print("Setup: Initializing WebDriver")
+        # Use Service to specify the chromedriver path
+        service = Service(ChromeDriverManager().install())
+        self.driver = webdriver.Chrome(service=service)  # Use service in Chrome()
         self.base_url = "https://autodemo.testoneo.com/en/"
 
     def tearDown(self):
