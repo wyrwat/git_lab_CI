@@ -3,5 +3,6 @@ stages:
 
 test my job name:
   stage: test
+  image: python:3.9
   script:
     - python hello.py
