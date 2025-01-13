@@ -1,13 +1,6 @@
 # Virtual environments
-venv/
-env/
-.venv/
-.env/
+venv
 
-# Environment variables
-.env
-.env.*
 
 # IntelliJ IDEA
-.idea/
-*.iml
+.idea
